@@ -1,0 +1,36 @@
+.game-board{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+	height: calc(100vh - 80px);
+}
+
+.square{
+	background: white;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	float: left;
+	margin-right: 1px;
+	margin-top: 1px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	border: 1px solid gray;
+}
+
+
+.square:focus{
+	outline: none;
+}
+
+.status{
+	font-family: "Futura", sans-serif;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.square--winning {
+	background-color: yellow;
+}

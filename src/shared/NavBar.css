@@ -1,0 +1,13 @@
+.navbar{
+	background-color: black;
+	height: 80px;
+	display: flex;
+	align-items: center;
+
+}
+
+.navbar-button{
+	color:azure;
+	margin: 0 40px;
+	text-decoration: none;
+}
