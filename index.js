@@ -2,7 +2,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
+const PORT = 443;
 const INDEX = "/index.html";
 const app = express();
 app.use((_req, res) => res.sendFile(INDEX, { root: __dirname }));
