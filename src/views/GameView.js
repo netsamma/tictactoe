@@ -1,7 +1,11 @@
 import Game from "../components/Game";
+import GameFunction from "../components/GameFunction";
 
 const GameView = () => (
-  <Game/>
+  <div>
+    {/* <GameClass/> */}
+    <GameFunction/>
+  </div>
 );
 
 export default GameView

@@ -6,7 +6,8 @@
 	height: calc(100vh - 80px);
 }
 
-.square{
+ 
+.box{
 	background: white;
 	width: 80px;
 	height: 80px;
@@ -20,17 +21,19 @@
 	border: 1px solid gray;
 }
 
-
-.square:focus{
-	outline: none;
+.box--winning {
+	background-color: yellow;
 }
 
-.status{
+.room_invite{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: "Futura", sans-serif;
 	font-size: 20px;
-	margin-bottom: 20px;
+	gap: 20px;
 }
 
-.square--winning {
-	background-color: yellow;
+.restart_btn{
+	margin-top: 30px;
 }
