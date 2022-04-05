@@ -3,8 +3,8 @@ import { useLocation } from 'react-router';
 import io from "socket.io-client";
 import BoardFunction from "./BoardFunction";
 
-const socket = io("ws://localhost:4000");
-// const socket_client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
+//const socket = io("ws://localhost:4000");
+const socket = io('wss://zeroper.herokuapp.com');
 
 
 function GameFunction() {
