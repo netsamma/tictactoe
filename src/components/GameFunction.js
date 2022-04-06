@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router';
 import io from "socket.io-client";
 import BoardFunction from "./BoardFunction";
+import './_game.css';
 
 //const socket = io("ws://localhost:4000");
-const socket = io('wss://zeroper.herokuapp.com');
+// const socket = io('wss://zeroper.herokuapp.com');
+const socket = io("ws://192.168.10.79:4000");
 
 
 function GameFunction() {
@@ -61,14 +63,15 @@ function GameFunction() {
   
 
   useEffect(() => {
+    var line
     winning_combinations.forEach((c) => {
       if (game[c[0]] === game[c[1]] && game[c[0]] === game[c[2]] && game[c[0]] !== '') {
         setWinner(true);
         setWinnerLine(c)
-        console.log(c)
+        line = c
       }
     });
-
+    console.log(line)
     if (turnNumber === 0) {
       setMyTurn(xo === 'X' ? true : false);
     }

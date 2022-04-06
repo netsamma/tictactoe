@@ -1,4 +1,5 @@
 import React from 'react'
+import './_game.css';
 
 function BoardFunction(props) {
   return (
@@ -23,7 +24,6 @@ function BoardFunction(props) {
 }
 
 const Box = ({ index, turn, value, winnerLine }) => {
-  console.log(winnerLine);
 	return (
 	  <div className={"box " + (winnerLine.includes(index) ? "box--winning" : null)}  onClick={() => turn(index)}>
 		  {value}
