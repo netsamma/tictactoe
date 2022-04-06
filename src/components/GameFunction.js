@@ -5,8 +5,8 @@ import BoardFunction from "./BoardFunction";
 import './_game.css';
 
 //const socket = io("ws://localhost:4000");
-// const socket = io('wss://zeroper.herokuapp.com');
-const socket = io("ws://192.168.10.79:4000");
+const socket = io('wss://zeroper.herokuapp.com');
+//const socket = io("ws://192.168.10.79:4000");
 
 
 function GameFunction() {
