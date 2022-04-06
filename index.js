@@ -1,14 +1,13 @@
-// Express server
+// // Express server
 const express = require("express");
-const dotenv = require("dotenv");
-dotenv.config();
-// const PORT = process.env.PORT || 4000;
-const PORT = 443;
+
+const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT;
 const INDEX = "/index.html";
 const app = express();
-app.use((_req, res) => res.sendFile(INDEX, { root: __dirname }));
+// app.use((_req, res) => res.sendFile(INDEX, { root: __dirname }));
 const server = app.listen(PORT, () =>
-  console.log(`Listening on ws://localhost:${PORT}..`)
+  console.log(`Listening on port ${PORT}..`)
 );
 
 // socket server
@@ -17,6 +16,7 @@ const io = require("socket.io")(server, {
     origin: "*",
   },
 });
+
 
 io.on("connection", (socket) => {
   socket.on("reqTurn", (data) => {
@@ -31,7 +31,6 @@ io.on("connection", (socket) => {
   socket.on("join", (room) => {
     socket.join(room);
     io.to(room).emit("opponent_joined");
-    // console.log("Joined: "+room);
   });
   socket.on("reqRestart", (data) => {
     const room = JSON.parse(data).room;
