@@ -26,12 +26,9 @@
 }
 
 .room_invite{
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	font-family: "Futura", sans-serif;
 	font-size: 20px;
-	gap: 20px;
+	text-align: center;
 }
 
 .restart_btn{

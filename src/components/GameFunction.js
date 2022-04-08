@@ -20,6 +20,7 @@ function GameFunction() {
   const [player, setPlayer] = useState('');
   const [hasOpponent, setHasOpponent] = useState(false);
   const [share, setShare] = useState(false);
+  const [invitedNumber, setInvitedNumber] = useState("");
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -126,19 +127,26 @@ function GameFunction() {
     }
   }, [paramsRoom]);
 
+  const handleOnclickSend = () => {
+    // let message = "Ciao ciao"
+    // let url = `https://web.whatsapp.com/send?phone=+393928304080`;
+    // window.open(url);
+    // let url = `whatsapp://send?phone=+393928304080`;
+    // url += `&text=${encodeURI(window.location.href+"?room="+room)}`;
+    let url = `whatsapp://send`;
+    url += `?text=${encodeURI(window.location.href+"?room="+room)}`;
+    window.open(url);
+  }  
 
   return (
     <div className="game-board">
 
       <div className="room_invite"> 
-        Room: {room} 
-        <button className="btn" onClick={() => setShare(!share)}>
-          {share ? "Nascondi link" : "Mostra link" }
+        <p>Room: {room}</p>
+        <button className="btn" onClick={() => handleOnclickSend()}>
+          Send invite
         </button>
       </div>
-
-      {share ? (<p>{`${window.location.href}?room=${room}`}</p> ) : null}
-
       <p>
         {hasOpponent ? 
           <> Prossima mossa: {myTurn ? <b>Tu</b> : 'Avversario'} </> : 'In attesa di avversario...'}
