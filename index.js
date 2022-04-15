@@ -31,10 +31,12 @@ io.on("connection", (socket) => {
   socket.on("join", (room) => {
     socket.join(room);
     io.to(room).emit("opponent_joined");
+    console.log("Joined: "+room);
   });
   socket.on("reqRestart", (data) => {
     const room = JSON.parse(data).room;
-    console.log("Server restart");
+    console.log("Game restart");
+    console.log("Room: "+room);
     io.to(room).emit("restart");
   });
 });
