@@ -1,10 +1,10 @@
 // import Game from "../components/Game";
-import GameFunction from "../components/GameFunction";
+import Game from "../components/Game";
 
 const GameView = () => (
   <div>
     {/* <GameClass/> */}
-    <GameFunction/>
+    <Game/>
   </div>
 );
 
