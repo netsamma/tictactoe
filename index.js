@@ -1,10 +1,20 @@
 // // Express server
 const express = require("express");
+const cors = require('cors')
 
 const PORT = process.env.PORT || 4000;
 // const PORT = process.env.PORT;
 const INDEX = "/index.html";
+
 const app = express();
+app.use(cors());
+app.use('/login', (req, res) => {
+  res.send({
+    token: 'test_token_123',
+    roles: [1,4]
+  });
+});
+
 // app.use((_req, res) => res.sendFile(INDEX, { root: __dirname }));
 const server = app.listen(PORT, () =>
   console.log(`Listening on port ${PORT}..`)
